@@ -1,9 +1,15 @@
 const express = require('express');
 const app = express();
 const geoip = require('geoip-lite');
-const url = require('url');
 const dns = require('dns');
 const port = 8080;
+
+/* Headsite*/
+app.get('', function(req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write("");
+  res.end("");
+});
 
 /* Normal IP-address*/
 app.get('/ip', function(req, res) {
@@ -28,12 +34,10 @@ app.get('/geoip', function(req, res) {
 });
 
 
-/* Hostname to ip */
+/* Hostname to ip (?address=kaikkitietokoneista.net)*/
 app.get('/host2ip', function(req, res) {
-  const myURL = new URL(req.url);
-  const urlsearch = myURL.search;
-  const final = urlsearch.replace("?", "");
-  dns.lookup(final, (err, address, family) => {
+  var address = req.query.address
+  dns.lookup(address, (err, address, family) => {
     res.writeHead(200, {'Content-Type': 'application/json'});
     res.write(JSON.stringify({ address: address, family: family }));
     res.end("");
