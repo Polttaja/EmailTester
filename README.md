@@ -1,11 +1,17 @@
 # node-network-api
 Network (IP-lookup and more) API made with Node.JS.
 
+## Demo/Website
+srv.kaikkitietokoneista.net:8080
+
 ## Features
 
-* IP-address lookup
-* IP-address location lookup
-* Error pages
+* All data are in JSON
 
-## Configuring
+* Find your IP-address
+* Your IP-address geo data
+* Given IP-address geo data
+* Hostname to IP-address
+
+## Installation
 
