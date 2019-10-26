@@ -10,8 +10,6 @@
       }
 
       header {
-        position: fixed;
-        top: 0;
         width: 100%;
         min-height: 30vh;
         font-size: 24px;
@@ -21,7 +19,6 @@
 
       header a {
         text-decoration: none;
-        position: relative;
       }
 
       a:link, a:visited {
@@ -49,8 +46,19 @@
         padding: 32px;
       }
 
-      .body {
-        margin-top: 30vh;
+      @media only screen and (max-width: 600px) {
+        header {
+          min-height: 100vh;
+          text-align: center;
+        }
+
+        .container {
+          min-height: 100vh;
+        }
+
+        #forkongithub a { /* FIX THIS */
+          display: none;
+        }
       }
 
       /* GITHUB*/
