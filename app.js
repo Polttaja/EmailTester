@@ -1,5 +1,9 @@
+const express = require('express');
+const app = express();
+const geoip = require('geoip-lite');
 const dns = require('dns');
-const port = 8089;
+
+const port = process.env.PORT || 8080;
 
 /* Headsite*/
 app.get('', function(req, res) {
@@ -20,22 +24,14 @@ app.get('/ip', function(req, res) {
 
 /* GEOIP */
 app.get('/geoip', function(req, res) {
-    const ip = req.query.address;
-    const geo = geoip.lookup(ip);
+  const ip = req.connection.remoteAddress;
+  const geo = geoip.lookup(ip);
 
-    res.writeHead(200, {'Content-Type': 'application/json'});
-    res.write(JSON.stringify(geo));
-    res.end("");
+  res.writeHead(200, {'Content-Type': 'application/json'});
+  res.write(JSON.stringify(geo));
+  res.end("");
 });
 
-app.get('/mygeoip', function(req, res) {
-    const ip = req.connection.remoteAddress;
-    const geo = geoip.lookup(ip);
-
-    res.writeHead(200, {'Content-Type': 'application/json'});
-    res.write(JSON.stringify(geo));
-    res.end("");
-});
 
 /* Hostname to ip (?address=kaikkitietokoneista.net)*/
 app.get('/host2ip', function(req, res) {
@@ -53,6 +49,6 @@ app.get('/*', function(req, res) {
   res.end("");
 });
 
-app.listen(port, '0.0.0.0', function() {
-  console.log('Express server (http) is listening on 0.0.0.0:' + port);
+app.listen(port, function() {
+  console.log('Express server (http) is listening on *:' + port);
 });
