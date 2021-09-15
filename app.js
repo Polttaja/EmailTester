@@ -18,8 +18,7 @@ app.get('/ip', function(req, res) {
   ipjson.ip = ip;
 
   res.writeHead(200, {'Content-Type': 'application/json'});
-  res.write(JSON.stringify({ ip: ip }));
-  res.end("");
+  res.end(JSON.stringify({ ip: ip }));
 });
 
 /* GEOIP */
@@ -28,8 +27,7 @@ app.get('/geoip', function(req, res) {
   const geo = geoip.lookup(ip);
 
   res.writeHead(200, {'Content-Type': 'application/json'});
-  res.write(JSON.stringify(geo));
-  res.end("");
+  res.end(JSON.stringify(geo));
 });
 
 
@@ -38,15 +36,13 @@ app.get('/host2ip', function(req, res) {
   var address = req.query.address
   dns.lookup(address, (err, address, family) => {
     res.writeHead(200, {'Content-Type': 'application/json'});
-    res.write(JSON.stringify({ address: address, family: family }));
-    res.end("");
+    res.end(JSON.stringify({ address: address, family: family }));
   });
 });
 
 app.get('/*', function(req, res) {
   res.writeHead(404, {'Content-Type': 'application/json'});
-  res.write(JSON.stringify({ error: "404"}));
-  res.end("");
+  res.end(JSON.stringify({ error: "404"}));
 });
 
 app.listen(port, function() {
