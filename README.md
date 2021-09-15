@@ -1,9 +1,6 @@
 # node-network-api
 Network (IP-lookup and more) API made with Node.JS.
 
-## Demo/Website
-srv.kaikkitietokoneista.net:8080
-
 ## Features
 
 * All data are in JSON
@@ -14,4 +11,24 @@ srv.kaikkitietokoneista.net:8080
 * Hostname to IP-address
 
 ## Installation
+
+Clone this repository
+```
+git clone https://github.com/kaikkitietokoneista/node-network-api.git
+```
+
+Go into it
+```
+cd node-network-api
+```
+
+Install dependencies
+```
+npm i
+```
+
+Start the server (API is available at [localhost:8080](http://localhost:8080))
+```
+node .
+```
 
