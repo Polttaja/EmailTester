@@ -32,8 +32,8 @@ app.get('/api/ip/geoip', (req, res) => {
 
 
 /* Hostname to ip (?address=kaikkitietokoneista.net)*/
-app.get('/api/ip/host2ip', (req, res) => {
-  var address = req.query.address
+app.get('/api/dns/host2ip', (req, res) => {
+  const address = req.query.address
   dns.lookup(address, (err, address, family) => {
     res.writeHead(200, {'Content-Type': 'application/json'});
     res.end(JSON.stringify({ address: address, family: family }));
