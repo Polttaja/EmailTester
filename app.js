@@ -40,7 +40,7 @@ app.get('/host2ip', function(req, res) {
   });
 });
 
-app.get('/*', function(req, res) {
+app.get('*', function(req, res) {
   res.writeHead(404, {'Content-Type': 'application/json'});
   res.end(JSON.stringify({ error: "404"}));
 });
