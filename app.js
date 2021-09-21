@@ -11,7 +11,7 @@ app.get('', (req, res) => {
 });
 
 /* Normal IP-address*/
-app.get('/ip', (req, res) => {
+app.get('/api/ip/ip', (req, res) => {
   const ip = req.connection.remoteAddress;
 
   const ipjson = new Object();
@@ -22,7 +22,7 @@ app.get('/ip', (req, res) => {
 });
 
 /* GEOIP */
-app.get('/geoip', (req, res) => {
+app.get('/api/ip/geoip', (req, res) => {
   const ip = req.connection.remoteAddress;
   const geo = geoip.lookup(ip);
 
@@ -32,7 +32,7 @@ app.get('/geoip', (req, res) => {
 
 
 /* Hostname to ip (?address=kaikkitietokoneista.net)*/
-app.get('/host2ip', (req, res) => {
+app.get('/api/ip/host2ip', (req, res) => {
   var address = req.query.address
   dns.lookup(address, (err, address, family) => {
     res.writeHead(200, {'Content-Type': 'application/json'});
