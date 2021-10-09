@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/kaikkitietokoneista/EmailTester/issues"
   },
-  "homepage": "https://github.com/kaikkitietokoneista/EmailTester#readme"
+  "homepage": "https://github.com/kaikkitietokoneista/EmailTester#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
