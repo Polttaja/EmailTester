@@ -3,9 +3,9 @@ A Node.JS service to validate email address.
 
 ## Features
 
-- [ ] Regex validation
-- [ ] DNS validation
-- [ ] SMTP validation
+- [x] Regex validation
+- [x] DNS validation
+- [x] SMTP validation
 - [ ] Send email and wait for link
   - [ ] Database of verified addresses
 
