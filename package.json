@@ -1,0 +1,25 @@
+{
+  "name": "emailtester",
+  "version": "1.0.0",
+  "description": "A Node.JS service to validate email address.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaikkitietokoneista/EmailTester.git"
+  },
+  "keywords": [
+    "Email",
+    "Validation",
+    "Email",
+    "validation"
+  ],
+  "author": "Kaikkitietokoneista",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/kaikkitietokoneista/EmailTester/issues"
+  },
+  "homepage": "https://github.com/kaikkitietokoneista/EmailTester#readme"
+}
