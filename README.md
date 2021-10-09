@@ -1,25 +1,24 @@
-# node-network-api
-Network (IP-lookup and more) API made with Node.JS.
+# EmailTester
+A Node.JS service to validate email address.
 
 ## Features
 
-* All data are in JSON
+- [ ] Regex validation
+- [ ] DNS validation
+- [ ] SMTP validation
+- [ ] Send email and wait for link
+  - [ ] Database of verified addresses
 
-* Find your IP-address
-* Your IP-address geo data
-* Given IP-address geo data
-* Hostname to IP-address
-
-## Installation
+## Development
 
 Clone this repository
 ```
-git clone https://github.com/kaikkitietokoneista/node-network-api.git
+git clone https://github.com/kaikkitietokoneista/EmailTester.git
 ```
 
 Go into it
 ```
-cd node-network-api
+cd EmailTester
 ```
 
 Install dependencies
@@ -27,7 +26,7 @@ Install dependencies
 npm i
 ```
 
-Start the server (API is available at [localhost:8080](http://localhost:8080))
+Start the server (project will be available at [localhost:8080](http://localhost:8080))
 ```
 node .
 ```
