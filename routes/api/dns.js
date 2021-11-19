@@ -5,6 +5,7 @@ module.exports = dnsCheck = async (req, res) => {
     try {
         res.send(await dnsPromises.resolveMx(hostname));
     } catch (error) {
+        console.error(error)
         res.status(404).send({
             "error": error.code
         });

@@ -6,6 +6,7 @@ module.exports = smtpCheck =  async (req, res) => {
         serverInfo = await dnsPromises.resolveMx(hostname);
         emailHost = serverInfo[0].exchange
     } catch (error) {
+        console.error(error)
         res.status(404).send({
             "error": error.code
         });
@@ -16,6 +17,7 @@ module.exports = smtpCheck =  async (req, res) => {
         smtp.connect(emailHost, 587, (mail) => {
             mail.helo(emailHost, (err, code, lines) => {
                 if (err) {
+                    console.error(err)
                     res.status(404).send({"error": err})
                     return;
                 } else {
@@ -29,6 +31,7 @@ module.exports = smtpCheck =  async (req, res) => {
             mail.quit();
         });            
     } catch (error) {
+        console.error(error)
         res.status(404).send({
             "error": error.code
         });
