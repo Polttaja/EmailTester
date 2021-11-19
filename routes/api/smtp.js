@@ -1,3 +1,6 @@
+const dnsPromises = require('dns').promises;
+const smtp = require('smtp-protocol');
+
 module.exports = smtpCheck =  async (req, res) => {
     let email = req.params.email;
     let hostname = email.split('@').pop();

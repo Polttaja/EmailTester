@@ -1,3 +1,5 @@
+const dnsPromises = require('dns').promises;
+
 module.exports = dnsCheck = async (req, res) => {
     let email = req.params.email;
     let hostname = email.split('@').pop();

@@ -1,6 +1,4 @@
 const express = require('express');
-const dnsPromises = require('dns').promises;
-const smtp = require('smtp-protocol');
 
 const { frontPage, dnsCheck, smtpCheck } = require ('./routes')
 
