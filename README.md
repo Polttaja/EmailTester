@@ -26,7 +26,7 @@ Install dependencies
 npm i
 ```
 
-Start the server (project will be available at [localhost:8080](http://localhost:8080))
+Start the server (project will be available at [localhost:3000](http://localhost:3000))
 ```
 node .
 ```
